@@ -1,0 +1,151 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Satisfy&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Kalam', cursive;
+    /*used to determine the total size for example a div*/
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /**take note of it**/
+    scroll-padding-top: 4rem;
+    list-style: none !important;
+    text-decoration: none !important;
+}
+
+/*to add a style to the text when it is selected by the user*/
+*::selection{
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+/*How to declare a variable in CSS and assign it a value*/
+:root{
+    --main-color:#ffb411;
+    --txt-color:#1e1c2a;
+    --bg-color:#fff;
+
+    --big-font:4rem;
+    --h2-font:2.24rem;
+    --p-font:0.9rem;
+}
+section{
+    padding: 50px 10%;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+header{
+    position: fixed;
+    width: 100%;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:18px 100px;
+    background-color: var(--bg-color);
+    box-shadow: 0 0.5rem 50rem rgba(0,0,0,0.1);
+}
+.logo{
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--main-color);
+    font-family: 'Satisfy', cursive;
+}
+.navbar{
+    display: flex;
+}
+.navbar a{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    color: var(--txt-color);
+}
+.navbar a:hover{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 1rem;
+    cursor: pointer;
+    /*For responsive not needed in laptop size*/
+    display: none;
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.home-img img{
+    width: 100%;
+}
+.home-txt h1{
+    font-size: var(--big-font);
+    color: var(--main-color);
+}
+.home-txt h2{
+    font-size: var(--h2-font);
+    margin: 1rem 0 1rem;
+}
+.btn{
+    display: inline-block;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    color: var(--bg-color);
+    border-radius: 50% 20%/10% 40%;
+}
+.btn:hover{
+    background-color: #ffa400;
+}
+.about{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap:1.5rem;
+}
+.about-img img{
+    max-width: 80%;
+    border-radius: 1rem;
+}
+.about-txt span, .menu-txt span{
+    color: var(--main-color);
+    font-weight: 1000;
+    font-size: 50px;
+}
+.about-txt h2{
+    font-size: var(--h2-font);
+}
+.about-txt p{
+    font-size: var(--p-font);
+    margin: 0.8rem 0 1.8rem;
+}
+.card{
+    border: 0.1px solid var(--main-color);
+    border-radius: 40% 10%;
+    overflow: hidden;
+}
+
+.menu{
+    text-align: center;
+}
+
+.row nav ul{
+    justify-content: center;
+    align-items: center;
+}
+.row li a{
+    background-color: #ffb411;
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+}
+.row li a:hover{
+    color: #ffb411;
+    background-color: var(--bg-color);
+}
