@@ -13,6 +13,17 @@
     list-style: none !important;
     text-decoration: none !important;
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color:var(--txt-color);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color:var(--main-color);
+    border-radius: 5px;
+  }
+
 
 /*to add a style to the text when it is selected by the user*/
 *::selection{
@@ -74,6 +85,7 @@ header{
     /*For responsive not needed in laptop size*/
     display: none;
 }
+/*-----------------------------HOME------------------------------------*/
 .home{
     width: 100%;
     height: 100vh;
@@ -82,10 +94,48 @@ header{
     align-items: center;
     gap: 1.2rem;
 }
-
-.home-img img{
-    width: 100%;
-}
+.gallery {
+    --g: 8px;   
+    --s: 400px; 
+    
+    display: grid;
+    border-radius: 50%;
+  }
+  .gallery > img {
+    grid-area: 1/1;
+    width: 400px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: translate(var(--_x,0),var(--_y,0));
+    cursor: pointer;
+    z-index: 0;
+    transition: .3s, z-index 0s .3s;
+  }
+  .gallery img:hover {
+    --_i: 1;
+    z-index: 1;
+    transition: transform .2s, clip-path .3s .2s, z-index 0s;
+  }
+  .gallery:hover img {
+    transform: translate(0,0);
+  }
+  .gallery > img:nth-child(1) {
+    clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+    --_y: calc(-1*var(--g))
+  }
+  .gallery > img:nth-child(2) {
+    clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+    --_x: var(--g)
+  }
+  .gallery > img:nth-child(3) {
+    clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+    --_y: var(--g)
+  }
+  .gallery > img:nth-child(4) {
+    clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+    --_x: calc(-1*var(--g))
+  }
 .home-txt h1{
     font-size: var(--big-font);
     color: var(--main-color);
@@ -114,7 +164,7 @@ header{
     max-width: 80%;
     border-radius: 1rem;
 }
-.about-txt span, .menu-txt span{
+.about-txt span, .menu-txt span, .contact-txt span{
     color: var(--main-color);
     font-weight: 1000;
     font-size: 50px;
@@ -149,3 +199,117 @@ header{
     color: #ffb411;
     background-color: var(--bg-color);
 }
+/* ----------------------------------------------------------------- */
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap:1.5rem;
+    
+}
+.contact-txt{
+    text-align: center;
+}
+
+.form {
+    border: 3px solid var(--main-color);
+    width: 100%;
+    padding: 20px;
+    height: 600px;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px var(--txt-color);
+  }
+  
+  label {
+    color: var(--main-color);
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:var(--bg-color);
+    box-shadow: 0px 0px 5px var(--txt-color);
+  }
+  textarea{
+    height: 75px;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  .form p {
+    font-size: 12px;
+    color: #f44336;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+  
+/* ---------------------------------------------------------------- */
+.text-white i:hover {
+    color: var(--txt-color);
+}
+.footer{
+    position: relative;
+}
+footer{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+.media{
+    background-color: var(--main-color);
+}
+.content{
+    background-color: var(--txt-color);
+}
+  
+.offcanvas{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.cart-item{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 10px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+}
+.row-img{
+    width: 50px;
+    height: 50px;
+}
+.rowimg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.del{
+    border:none;
+}
+.del:hover{
+    cursor: pointer;
+    color: var(--main-color); 
+}
+.order-price{
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
