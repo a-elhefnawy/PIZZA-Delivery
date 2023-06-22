@@ -144,14 +144,16 @@ header{
     font-size: var(--h2-font);
     margin: 1rem 0 1rem;
 }
-.btn{
+.bttn{
     display: inline-block;
     background-color: var(--main-color);
     padding: 10px 20px;
     color: var(--bg-color);
+    border: none;
     border-radius: 50% 20%/10% 40%;
+    cursor: pointer;
 }
-.btn:hover{
+.bttn:hover{
     background-color: #ffa400;
 }
 .about{

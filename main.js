@@ -62,7 +62,7 @@ let displayItem=(items)=>{
                             <h5 class="card-title">${title}</h5>
                             <h3 class="card-text">${price}E.P</h3>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a onclick="addtocart(`+(i++)+`)" class="btn btn-primary">Add to Cart</a>
+                            <a onclick="addtocart(`+(i++)+`)" class="bttn btn-primary">Add to Cart</a>
                         </div>
                     </div>
                 </div>`)
@@ -145,7 +145,7 @@ function displayOrder(){
                 <img class='rowimg' src="${image}">
                 </div>
                 <p style='font-size:15px;'>${title}</p>
-                <h2 style='font-size:20px;'>${price}</h2>
+                <h2 style='font-size:20px;'>${price}E.P</h2>
                 <button onclick='deleteItem(`+(j++)+`)' class="del"><i class='fa-solid fa-trash'></i></button>
                 </div>`
             )
@@ -198,4 +198,4 @@ function validate(e){
 }
 
 /////////////////////////////////////////////////////////////////////
-//--scroll reveal--//
+
